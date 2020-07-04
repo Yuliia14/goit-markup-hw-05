@@ -78,6 +78,8 @@ h4 {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--title-text-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-link:hover,
 .header-link:focus {
@@ -124,6 +126,8 @@ h4 {
 }
 .header-icon {
   fill: var(--primary-text-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-link:hover .header-icon {
   fill: var(--primary-blue-color);
@@ -325,6 +329,8 @@ h4 {
   width: 20px;
   height: 20px;
   fill: #afb1b8;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-media-box:hover .social-media-icon {
   fill: var(--primary-white-color);
@@ -339,6 +345,8 @@ h4 {
   border-radius: 100px;
   width: 44px;
   height: 44px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-media-box:hover,
 .social-media-box:focus {
@@ -365,12 +373,16 @@ h4 {
   height: 90px;
   border-radius: 4px;
   border: 1px solid #afb1b8;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-box:hover {
   border-color: var(--primary-blue-color);
 }
 .company-icon {
   fill: #afb1b8;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-box:hover .company-icon {
   fill: var(--primary-blue-color);
@@ -446,6 +458,8 @@ footer {
 }
 .street-address {
   color: var(--primary-white-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .street-address:hover,
 .street-address:focus {
@@ -454,6 +468,8 @@ footer {
 .footer-contact {
   color: var(--footer-address-color);
   margin-top: 9px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-contact:hover,
 .footer-contact:focus {
@@ -506,6 +522,8 @@ footer {
   width: 44px;
   height: 44px;
   background-color: rgba(255, 255, 255, 0.1);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-sm-box:hover,
 .footer-sm-box:focus {
@@ -527,6 +545,9 @@ footer {
   line-height: 1.63;
   text-align: center;
   color: var(--title-text-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .projects-list > li:not(:last-child) {
   margin-right: 30px;
@@ -601,6 +622,7 @@ footer {
 }
 .projects-examples-img {
   position: relative;
+  overflow: hidden;
 }
 .projects-examples-img::before {
   display: inline-block;
@@ -611,10 +633,27 @@ footer {
   height: 100%;
   background: rgba(33, 150, 243, 0.9);
 
-  opacity: 0;
+  transform: translateY(100%);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .projects-examples-img:hover::before {
-  opacity: 1;
+  transform: translateY(0);
+}
+.projects-examples-item > a:focus .projects-examples-img::before {
+  transform: translateY(0);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: translateY(100%);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project-examples-text {
   position: absolute;
@@ -627,9 +666,11 @@ footer {
   font-size: 18px;
   line-height: 1.56;
   color: var(--primary-white-color);
-
-  opacity: 0;
 }
-.projects-examples-img:hover .project-examples-text {
-  opacity: 1;
+
+.projects-examples-img:hover .project-overlay {
+  transform: translateY(0);
+}
+.projects-examples-item > a:focus .project-overlay {
+  transform: translateY(0);
 }
