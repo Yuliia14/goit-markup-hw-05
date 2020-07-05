@@ -330,14 +330,18 @@ h4 {
   height: 20px;
   fill: #afb1b8;
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-media-box:hover .social-media-icon {
   fill: var(--primary-white-color);
+  transform: rotate(360deg);
 }
 .social-media-box:focus .social-media-icon {
   fill: var(--primary-white-color);
+  transform: rotate(360deg);
 }
+
 .social-media-box {
   display: flex;
   justify-content: center;
